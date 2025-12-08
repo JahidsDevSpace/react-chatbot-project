@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login form</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      .login-input {
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border-width: 1px;
+        font-size: 14px;
+        width: 200px;
+      }
+
+      .login-btn {
+        background-color: rgb(0, 123, 255);
+        color: white;
+        padding: 10px 15px;
+        margin-right: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .show-btn {
+        padding: 10px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        margin-left: -30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function LoginForm() {
+        const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
+
+        function toggleShowPassword() {
+          if (isPasswordVisible) {
+            setIsPasswordVisible(false);
+          } else {
+            setIsPasswordVisible(true);
+          }
+        }
+
+        return (
+          <>
+            <div>
+              <input placeholder="Email" type="text" className="login-input"/>
+            </div>
+            <div>
+              <input placeholder="Password" type={isPasswordVisible ? 'text' : 'password'} className="login-input"/>
+
+              <button onClick={toggleShowPassword} className="show-btn">{isPasswordVisible ? <img src="hide.png" width="15"/> : <img src="visible.png" width="15"/>}</button>
+            </div>
+            <button className="login-btn">Login</button>
+            <button className="login-btn">Sign Up</button>
+          </>
+        )
+      };
+
+      function App() {
+        return (
+          <>
+            <p className="title">Hello, welcome to my website!</p>
+            <LoginForm/>
+          </>
+        )
+      };
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>
+
