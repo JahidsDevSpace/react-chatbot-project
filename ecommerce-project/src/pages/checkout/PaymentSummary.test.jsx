@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { render, screen, within } from "@testing-library/react";
-import { MemoryRouter } from "react-router";
+import { MemoryRouter, useLocation } from "react-router";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
 import { PaymentSummary } from "./PaymentSummary";
@@ -10,6 +10,7 @@ vi.mock('axios')
 describe('PaymentSummary component', () => {
   let paymentSummary;
   let loadCart;
+  let user;
 
   beforeEach(() => {
     paymentSummary = {
@@ -22,6 +23,7 @@ describe('PaymentSummary component', () => {
     };
 
     loadCart = vi.fn();
+    user = userEvent.setup()
   });
 
   it('displays the correct details', async() => {
@@ -57,4 +59,26 @@ describe('PaymentSummary component', () => {
       "$52.51"
     );
   });
+
+  it("clicks place order button", async() => {
+    function Location() {
+      const location = useLocation();
+      return (<div data-testid="url-path">{location.pathname}</div>);
+    };
+
+    render(
+      <MemoryRouter>
+        <PaymentSummary paymentSummary={paymentSummary} loadCart={loadCart} />
+        <Location />
+      </MemoryRouter>
+    );
+
+    const placeOrderButton = screen.getByTestId('place-order-button');
+    await user.click(placeOrderButton);
+
+    expect(axios.post).toHaveBeenCalledWith('/api/orders');
+    expect(loadCart).toHaveBeenCalled();
+    expect(screen.getByTestId('url-path')).toHaveTextContent('/orders')
+  });
+
 })
