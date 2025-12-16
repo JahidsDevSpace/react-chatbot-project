@@ -50,13 +50,11 @@ describe('Product component', () => {
     expect(
       screen.getByText('87')
     ).toBeInTheDocument()
-
   });
 
   it('adds a product to the cart', async() => {
     render(<Product product={product} loadCart={loadCart} />);
 
-    const user = userEvent.setup();
     const addToCartButton = screen.getByTestId("add-to-cart-button");
     await user.click(addToCartButton);
 
@@ -66,7 +64,6 @@ describe('Product component', () => {
     });
 
     expect(loadCart).toHaveBeenCalled();
-
   });
 
 })
