@@ -97,8 +97,8 @@
 }
 
 .header .right-section {
-  width: 180px;
-  flex-shrink: 0;
+  width: auto;
+  flex-shrink: 1;
   display: flex;
   justify-content: end;
 }
@@ -113,6 +113,21 @@
 }
 
 .header .orders-text {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.header .login-link {
+  color: white;
+
+  display: flex;
+  align-items: center;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.header .login-text {
   display: block;
   font-size: 15px;
   font-weight: 700;
@@ -151,3 +166,21 @@
 .orders-link.active {
   text-decoration: underline;
 }
+
+.login-link.active {
+  text-decoration: underline;
+}
+
+/* @media (max-width: 575px) {
+  .header .orders-text,
+  .header .login-text,
+  .header .cart-text {
+    display: none;
+  }
+
+  .header .orders-link,
+  .header .login-link {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+} */

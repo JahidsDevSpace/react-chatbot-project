@@ -8,6 +8,12 @@ import { TrackingPage } from "./pages/TrackingPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import "./App.css";
 
+declare global {
+  interface Window {
+    axios: typeof axios;
+  }
+}
+
 window.axios = axios;
 
 function App() {

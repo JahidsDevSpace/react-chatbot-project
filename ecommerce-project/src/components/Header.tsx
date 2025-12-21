@@ -56,14 +56,25 @@ export function Header({ cart }: HeaderProps) {
       </div>
 
       <div className="middle-section">
-        <input className="search-bar" type="text" placeholder="Search" value={search} onChange={updateSearchInput} onKeyDown={handleSearchKeyDown} />
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Search"
+          value={search}
+          onChange={updateSearchInput}
+          onKeyDown={handleSearchKeyDown}
+        />
 
-        <button className="search-button" onClick={searchProduct} >
+        <button className="search-button" onClick={searchProduct}>
           <img className="search-icon" src={SearchIcon} />
         </button>
       </div>
 
       <div className="right-section">
+        <NavLink className="login-link header-link" to="/login">
+          <span className="login-text">Login</span>
+        </NavLink>
+        
         <NavLink className="orders-link header-link" to="/orders">
           <span className="orders-text">Orders</span>
         </NavLink>
