@@ -3,17 +3,19 @@ import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import { OrderHeader } from "./OrderHeader";
 import { OrderDetailsGrid } from "./OrderDetailsGrid";
+import useCartStore from "../../store/cartStore";
 import "./OrdersPage.css";
 
-export function OrdersPage({ cart, loadCart }) {
+export function OrdersPage() {
+  const { cart, loadCart } = useCartStore();
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     const fetchOrdersData = async () => {
       const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
-    }
-    
+    };
+
     fetchOrdersData();
   }, []);
 

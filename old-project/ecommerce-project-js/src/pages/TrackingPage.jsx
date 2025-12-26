@@ -3,9 +3,11 @@ import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { Header } from "../components/Header";
+import useCartStore from "../store/cartStore";
 import "./TrackingPage.css";
 
-export function TrackingPage({ cart }) {
+export function TrackingPage() {
+  const { cart } = useCartStore();
   const { orderId, productId } = useParams();
   const [order, setOrder] = useState(null);
 
@@ -28,8 +30,7 @@ export function TrackingPage({ cart }) {
   //   };
 
   //   fetchTrackingData();
-  // }, [orderId]); 
-
+  // }, [orderId]);
 
   useEffect(() => {
     const fetchTrackingData = async () => {
@@ -42,7 +43,7 @@ export function TrackingPage({ cart }) {
     fetchTrackingData();
   }, [orderId]);
 
-  if(!order) {
+  if (!order) {
     return null;
   }
 
@@ -50,7 +51,8 @@ export function TrackingPage({ cart }) {
     return orderProduct.productId === productId;
   });
 
-  const totalDeliveryTimeMs = orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
+  const totalDeliveryTimeMs =
+    orderProduct.estimatedDeliveryTimeMs - order.orderTimeMs;
   const timePassedMs = dayjs().valueOf() - order.orderTimeMs;
 
   let deliveryPercent = (timePassedMs / totalDeliveryTimeMs) * 100;
@@ -92,7 +94,9 @@ export function TrackingPage({ cart }) {
           <img className="product-image" src={orderProduct.product.image} />
 
           <div className="progress-labels-container">
-            <div className={`progress-label ${isPreparing && "current-status"}`}>
+            <div
+              className={`progress-label ${isPreparing && "current-status"}`}
+            >
               Preparing
             </div>
             <div className={`progress-label ${isShipped && "current-status"}`}>
