@@ -9,9 +9,9 @@ import "./PhotoCard.css";
 
 const PhotoCard = () => {
   const containerRef = useRef(null);
-  const {scrollYProgress} = useScroll({
+  const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start end', 'end start'],
+    offset: ["start end", "end start"],
   });
 
   const backgrounds = ["#888282", "#313503", "#05291c"];
@@ -95,7 +95,12 @@ const PhotoCard = () => {
   ];
 
   return (
-    <motion.div ref={containerRef} animate={{ background }} transition={{ duration: 1, ease: 'easeInOut'}} className="photo-card-page">
+    <motion.div
+      ref={containerRef}
+      animate={{ background }}
+      transition={{ duration: 1, ease: "easeInOut" }}
+      className="photo-card-page"
+    >
       <div className="photo-card">
         {features.map((feature, index) => (
           <Card key={index} feature={feature} />

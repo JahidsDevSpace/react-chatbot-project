@@ -1,0 +1,131 @@
+.card-page {
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
+  background-color: rgb(243, 244, 246);
+  min-height: 100vh;
+  position: relative;
+}
+
+.blur-bg {
+  position: fixed;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.expanded-card {
+  height: 500px;
+  width: 240px;
+  border-radius: 16px;
+  border: 1px solid rgb(229, 229, 229);
+  padding: 16px;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  margin: auto;
+  background: white;
+}
+
+.expanded-image {
+  /* height: 240px; */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+}
+
+.expanded-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.expanded-des {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  width: 100%;
+  align-items: start;
+  gap: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.expanded-content {
+  height: 160px;
+  overflow: auto;
+  mask-image: linear-gradient(to top, transparent 20%, black 60%);
+}
+
+.sp-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+}
+
+.card-content {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid rgb(229, 229, 229);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 136px;
+}
+
+.card-1 {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.card-image {
+  height: 56px;
+  aspect-ratio: 1 / 1;
+  border-radius: 8px;
+}
+
+.card-description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 12px;
+  /* letter-spacing: -0.02em; */
+  color: black;
+}
+
+.card-p {
+  font-size: 10px;
+  margin-top: -5px;
+  color: rgb(115, 115, 115);
+}
+
+.card-ctaText {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgb(34, 197, 94);
+  border-radius: 100px;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.content-p {
+  font-size: 18px;
+  color: rgb(115, 115, 115);
+}

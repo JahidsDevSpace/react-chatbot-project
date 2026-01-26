@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IconChevronLeft, IconChevronRight, IconComponents, IconHome, IconPhotoAi, IconSettings, IconUserCheck } from "@tabler/icons-react";
+import { IconBrandSpotify, IconChevronLeft, IconChevronRight, IconComponents, IconHome, IconPhotoAi, IconSettings, IconUserCheck } from "@tabler/icons-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
@@ -15,9 +15,9 @@ const Sidebar = () => {
   const sidebarItems = [
     { id: "home", link: "/", label: "Home", icon: <IconHome /> },
     { id: "card", link: "/card", label: "UI Components", icon: <IconComponents /> },
-    { id: "settings", link: "/settings", label: "Settings", icon: <IconSettings /> },
     { id: "auth", link: "/login", label: "Authentication", icon: <IconUserCheck /> },
-    { id: 'pcard', link: '/pcard', label: 'Photo Card', icon: <IconPhotoAi/>}
+    { id: 'pcard', link: '/pcard', label: 'Photo Card', icon: <IconPhotoAi/>},
+    { id: 'spui', link: '/spui', label: 'Spotify Card', icon: <IconBrandSpotify />}
   ];
 
   const sidebarVariant = {
@@ -58,6 +58,7 @@ const Sidebar = () => {
       transition={{ duration: 0.3 }}
       className="sidebar"
     >
+      <title>Sidebar </title>
       <motion.nav variants={sidebarVariant} className="sidebar-content">
         <div className="sidebar-heading-container">
           <h2 className={!isOpen ? "sidebar-header-sr-only" : "sidebar-header"}>
