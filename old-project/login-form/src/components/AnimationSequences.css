@@ -1,0 +1,64 @@
+.animation-seq-page {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.animated-seq-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 240px;
+  height: 80px;
+}
+
+.animated-seq-btn {
+  height: 80px;
+  border-radius: 8px;
+  color: white;
+  font-size: medium;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(
+    to right,
+    rgb(168, 85, 247),
+    rgb(124, 58, 202),
+    rgb(99, 102, 241)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinning-circle {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: rgb(34, 197, 94);
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.check-icon {
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.loader {
+  height: 20px;
+  width: 20px;
+  color: white;
+}
