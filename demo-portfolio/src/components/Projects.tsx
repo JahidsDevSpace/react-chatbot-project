@@ -1,0 +1,73 @@
+import { motion } from "motion/react";
+
+const Projects = () => {
+  const projects = [
+    {
+      title: "Macbook Mockup",
+      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/macbook-scroll.png",
+      href: "#",
+      description:
+        "A mockup of a Mackbook that showcases the product and its features.",
+    },
+    {
+      title: "Instant Feedback",
+      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/wobble-card.png",
+      href: "#",
+      description:
+        "An interactive feedback system that provides instant responses to user actions.",
+    },
+    {
+      title: "Best Component",
+      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/wavy-background.png",
+      href: "#",
+      description:
+        "A visually stunning wavy background component designed to add depth and fluid motion to your hero sections.",
+    },
+    {
+      title: "Authentic Steps",
+      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/pro/shaders.webp",
+      href: "#",
+      description:
+        "A high-performance shader-based component that creates complex, authentic visual patterns for modern web experiences.",
+    },
+  ];
+
+  return (
+    <div className="py-10 text-white">
+      <p className="text-secondary mx-w-lg pt-4 text-sm md:text-sm">
+        I love building web apps that can impact millions of lives.
+      </p>
+      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2">
+        {projects.map((project, index) => (
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.1,
+              ease: "easeInOut",
+            }}
+            key={index}
+            className="group relative"
+          >
+            <h2 className="absolute top-2 left-2 font-medium tracking-tight text-black dark:text-white">
+              {project.title}
+            </h2>
+            <img
+              src={project.src}
+              alt={project.title}
+              height={300}
+              width={300}
+              className="h-72 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
+            />
+            <p className="absolute bottom-2 left-2 max-w-xs text-sm text-black dark:text-white">
+              {project.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
