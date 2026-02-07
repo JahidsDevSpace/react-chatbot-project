@@ -1,20 +1,41 @@
 import { useState, useEffect } from "react";
 
+// 1. Define the shape of your MDX Metadata
+interface PostMeta {
+  title: string;
+  date: string;
+  description?: string;
+}
+
+// 2. Define the shape of the imported MDX module
+interface MDXModule {
+  default: React.ComponentType;
+  meta: PostMeta;
+}
+
+// 3. Define the Post object used in state
+interface Post {
+  slug: string;
+  Component: React.ComponentType;
+  meta: PostMeta;
+}
+
 // This grabs all mdx files in the content folder
-const modules = import.meta.glob("../content/*.mdx");
+const modules = import.meta.glob<MDXModule>("../content/*.mdx");
 
 const Blog = () => {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
     const loadPosts = async () => {
       const postList = await Promise.all(
         Object.keys(modules).map(async (path) => {
-          const content: any = await modules[path]();
+          const content = await modules[path]();
           return {
             slug: path.replace("../content/", "").replace(".mdx", ""),
             Component: content.default,
             // You can add metadata here if you use frontmatter
+            meta: content.meta,
           };
         }),
       );
