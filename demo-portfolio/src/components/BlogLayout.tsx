@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ArrowLeft from "../../public/arrow-left.png";
+import ArrowLeft from "/arrow-left.png";
 
 const BlogLayout = ({ children }: { children: React.ReactNode }) => {
   return (

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 // 1. Define the shape of your MDX Metadata
 interface PostMeta {
@@ -39,7 +40,12 @@ const Blog = () => {
           };
         }),
       );
-      setPosts(postList);
+      setPosts(
+        postList.sort(
+          (a, b) =>
+            new Date(b.meta.date).getTime() - new Date(a.meta.date).getTime(),
+        ),
+      );
     };
 
     loadPosts();
@@ -47,17 +53,34 @@ const Blog = () => {
 
   return (
     <div className="mx-auto max-w-4xl px-4">
-      <h1 className="mb-10 text-4xl font-bold text-white">Latest Posts</h1>
+      <header className="mb-12">
+        <h1 className="text-4xl font-bold tracking-tight text-white">Blogs</h1>
+        <p className="mt-2 text-lg text-zinc-400">
+          Writing about web dev, design, and life.
+        </p>
+      </header>
 
-      <div className="space-y-20">
-        {posts.map(({ slug, Component }) => (
-          <article
+      <div className="space-y-10">
+        {posts.map(({ slug, meta }) => (
+          <Link
+            to={`/blog/${slug}`}
             key={slug}
-            className="prose dark:prose-invert max-w-none border-b border-zinc-800 pb-10"
+            className="group block rounded-2xl border border-zinc-800 p-5 transition-all hover:bg-zinc-900/50"
           >
-            {/* This renders the actual MDX content */}
-            <Component />
-          </article>
+            <h2 className="text-xl font-semibold text-white transition-colors group-hover:text-blue-400">
+              {meta.title}
+            </h2>
+            <p className="mt-2 line-clamp-2 text-sm text-zinc-400">
+              {meta.description}
+            </p>
+            <div className="mt-4 flex items-center gap-2 text-xs text-zinc-500">
+              <span>{meta.date}</span>
+              <span>•</span>
+              <span className="text-blue-400 opacity-0 transition-opacity group-hover:opacity-100">
+                Read more →
+              </span>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

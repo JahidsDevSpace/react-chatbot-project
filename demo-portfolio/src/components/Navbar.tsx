@@ -41,22 +41,24 @@ const Navbar = () => {
       <motion.nav
         animate={{
           boxShadow: scrolled ? "var(--shadow-aceternity)" : "none",
-          width: scrolled ? (window.innerWidth < 768 ? '95%' : '60%') : "100%",
+          width: scrolled ? (window.innerWidth < 768 ? "95%" : "60%") : "100%",
           y: scrolled ? 10 : 0,
         }}
         transition={{
           duration: 0.3,
           ease: "linear",
         }}
-        className="fixed z-50 inset-x-0 top-0 mx-auto flex max-w-4xl items-center justify-between rounded-full px-3 py-2 dark:bg-neutral-900"
+        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full px-3 py-2 dark:bg-neutral-900"
       >
-        <img
-          src="/me.jpg"
-          height={100}
-          width={100}
-          alt="Avatar"
-          className="h-10 w-10 rounded-full"
-        />
+        <Link to='/'>
+          <img
+            src="/me.jpg"
+            height={100}
+            width={100}
+            alt="Avatar"
+            className="h-10 w-10 rounded-full"
+          />
+        </Link>
         <div className="flex items-center">
           {navItems.map((item, index) => (
             <Link
