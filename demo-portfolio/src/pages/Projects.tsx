@@ -33,7 +33,10 @@ const Projects = () => {
   ];
 
   return (
-    <div className="py-10 text-white">
+    <div className="py-5 text-white">
+      <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+        Projects
+      </h1>
       <p className="text-secondary mx-w-lg pt-4 text-sm md:text-sm">
         I love building web apps that can impact millions of lives.
       </p>
@@ -50,7 +53,7 @@ const Projects = () => {
             key={index}
             className="group relative"
           >
-            <h2 className="absolute top-2 left-2 font-medium tracking-tight text-black dark:text-white">
+            <h2 className="absolute top-2 left-2 font-medium tracking-tight text-white dark:text-black">
               {project.title}
             </h2>
             <img
@@ -60,7 +63,7 @@ const Projects = () => {
               width={300}
               className="h-72 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
             />
-            <p className="absolute bottom-2 left-2 max-w-xs text-sm text-black dark:text-white">
+            <p className="absolute bottom-2 left-2 max-w-xs text-sm text-white dark:text-black">
               {project.description}
             </p>
           </motion.div>

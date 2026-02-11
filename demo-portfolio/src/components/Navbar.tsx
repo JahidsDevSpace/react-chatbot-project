@@ -37,7 +37,7 @@ const Navbar = () => {
   });
 
   return (
-    <Container className="text-white">
+    <Container className="text-black dark:text-white">
       <motion.nav
         animate={{
           boxShadow: scrolled ? "var(--shadow-aceternity)" : "none",
@@ -50,7 +50,7 @@ const Navbar = () => {
         }}
         className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full px-3 py-2 dark:bg-neutral-900"
       >
-        <Link to='/'>
+        <Link to="/">
           <img
             src="/me.jpg"
             height={100}
@@ -69,7 +69,7 @@ const Navbar = () => {
               onMouseLeave={() => setHovered(null)}
             >
               {hovered === index && (
-                <motion.span className="absolute inset-0 h-full w-full rounded-md bg-neutral-100 dark:bg-neutral-800" />
+                <motion.span className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800" />
               )}
               <span className="relative z-10">{item.title}</span>
             </Link>

@@ -1,9 +1,10 @@
 import Container from "./components/Container";
 import Navbar from "./components/Navbar";
-import Projects from "./components/Projects";
+import Projects from "./pages/Projects";
 import { Route, Routes } from "react-router-dom";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </Container>
     </main>

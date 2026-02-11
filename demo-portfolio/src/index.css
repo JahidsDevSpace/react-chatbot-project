@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
 :root {
@@ -12,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    background-color: rgb(64, 64, 64);
+    background-color: rgb(240, 240, 240);
   }
 }
 

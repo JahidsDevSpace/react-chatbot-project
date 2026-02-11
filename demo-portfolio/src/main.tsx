@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App.tsx';
-import "highlight.js/styles/tokyo-night-dark.css";
+import "highlight.js/styles/atom-one-dark-reasonable.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

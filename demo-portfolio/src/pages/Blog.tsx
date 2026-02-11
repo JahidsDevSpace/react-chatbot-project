@@ -54,7 +54,9 @@ const Blog = () => {
   return (
     <div className="mx-auto max-w-4xl px-4">
       <header className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight text-white">Blogs</h1>
+        <h1 className="text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+          Blogs
+        </h1>
         <p className="mt-2 text-lg text-zinc-400">
           Writing about web dev, design, and life.
         </p>
@@ -65,9 +67,9 @@ const Blog = () => {
           <Link
             to={`/blog/${slug}`}
             key={slug}
-            className="group block rounded-2xl border border-zinc-800 p-5 transition-all hover:bg-zinc-900/50"
+            className="group block rounded-2xl border border-zinc-800 p-5 transition-all hover:bg-zinc-300/50"
           >
-            <h2 className="text-xl font-semibold text-white transition-colors group-hover:text-blue-400">
+            <h2 className="text-xl font-semibold text-neutral-800 transition-colors group-hover:text-blue-400 dark:text-neutral-200">
               {meta.title}
             </h2>
             <p className="mt-2 line-clamp-2 text-sm text-zinc-400">

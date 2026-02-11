@@ -7,6 +7,7 @@ interface PostMeta {
   title: string;
   date: string;
   description?: string;
+  image: string;
 }
 
 interface MDXModule {
@@ -41,13 +42,20 @@ const BlogPost = () => {
   }, [slug]);
 
   if (!PostContent || !meta)
-    return <div className="p-20 text-white">Loading...</div>;
+    return <div className="p-20 text-black dark:text-white text-center">Loading...</div>;
 
   return (
     <BlogLayout>
       <div className="relative">
         <TableOfContents />
-        
+        {meta?.image && (
+          <img
+            src={meta.image}
+            className="mx-auto mb-15 aspect-video max-h-105 w-full max-w-2xl rounded-2xl border object-cover shadow-2xl"
+            alt={meta.title}
+          />
+        )}
+
         <article className="prose dark:prose-invert max-w-none">
           <PostContent />
         </article>
