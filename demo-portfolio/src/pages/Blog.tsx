@@ -1,3 +1,5 @@
+import Heading from "../components/Heading";
+import SubHeading from "../components/SubHeading";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -54,12 +56,12 @@ const Blog = () => {
   return (
     <div className="mx-auto max-w-4xl px-4">
       <header className="mb-12">
-        <h1 className="text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+        <Heading>
           Blogs
-        </h1>
-        <p className="mt-2 text-lg text-zinc-400">
+        </Heading>
+        <SubHeading>
           Writing about web dev, design, and life.
-        </p>
+        </SubHeading>
       </header>
 
       <div className="space-y-10">

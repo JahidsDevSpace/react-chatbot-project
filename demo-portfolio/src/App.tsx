@@ -1,10 +1,12 @@
+import { Route, Routes } from "react-router-dom";
 import Container from "./components/Container";
 import Navbar from "./components/Navbar";
 import Projects from "./pages/Projects";
-import { Route, Routes } from "react-router-dom";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
+import Heading from "./components/Heading";
+import SubHeading from "./components/SubHeading";
 
 function App() {
   return (
@@ -18,14 +20,11 @@ function App() {
             path="/"
             element={
               <>
-                <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
-                  Jahid Hasan
-                </h1>
-                <p className="text-secondary mx-w-lg pt-4 text-sm md:text-sm">
-                  I'm a software engineer with a passion for building scalable
-                  and efficient systems. I'm currently working as a software
+                <Heading>Jahid Hasan</Heading>
+                <SubHeading>
+                  I'm a software engineer with a passion for building scalable and efficient systems. I'm currently working as a software
                   engineer at Google.
-                </p>
+                </SubHeading>
                 <Projects />
                 <Blog />
               </>

@@ -1,3 +1,5 @@
+import SubHeading from "../components/SubHeading";
+import Heading from "../components/Heading";
 import { motion } from "motion/react";
 
 const Projects = () => {
@@ -34,12 +36,12 @@ const Projects = () => {
 
   return (
     <div className="py-5 text-white">
-      <h1 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">
+      <Heading>
         Projects
-      </h1>
-      <p className="text-secondary mx-w-lg pt-4 text-sm md:text-sm">
+      </Heading>
+      <SubHeading>
         I love building web apps that can impact millions of lives.
-      </p>
+      </SubHeading>
       <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2">
         {projects.map((project, index) => (
           <motion.div
