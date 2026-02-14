@@ -36,9 +36,7 @@ const Projects = () => {
 
   return (
     <div className="py-5 text-white">
-      <Heading>
-        Projects
-      </Heading>
+      <Heading>Projects</Heading>
       <SubHeading>
         I love building web apps that can impact millions of lives.
       </SubHeading>
@@ -55,19 +53,28 @@ const Projects = () => {
             key={index}
             className="group relative"
           >
-            <h2 className="absolute top-2 left-2 font-medium tracking-tight text-white dark:text-black">
-              {project.title}
-            </h2>
             <img
               src={project.src}
               alt={project.title}
               height={300}
               width={300}
-              className="h-72 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02]"
+              className="h-72 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px]"
             />
-            <p className="absolute bottom-2 left-2 max-w-xs text-sm text-white dark:text-black">
-              {project.description}
-            </p>
+            <motion.div
+              initial={{ y: 10 }}
+              whileHover={{ y: 0 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+            >
+              <div className="transform transition-transform duration-200">
+                <h2 className="text-xl font-medium tracking-tight text-white dark:text-black">
+                  {project.title}
+                </h2>
+                <p className="max-w-xs text-sm text-zinc-300 dark:text-black">
+                  {project.description}
+                </p>
+              </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
