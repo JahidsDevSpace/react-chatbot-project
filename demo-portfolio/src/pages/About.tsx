@@ -7,10 +7,8 @@ import SubHeading from "../components/SubHeading";
 const About = () => {
   return (
     <div className="flex min-h-screen items-center justify-start">
-      <Container className="min-h-[200vh] p-4 pt-4 md:pt-4 md:pb-10">
-        <Heading>
-          About Me
-        </Heading>
+      <Container className="min-h-screen p-4 pt-4 md:pt-4 md:pb-10">
+        <Heading>About Me</Heading>
         <SubHeading>
           I am a software engineer based in Dhaka, Bangladesh, with a deep
           interest in building modern web applications. My journey in tech
@@ -23,13 +21,11 @@ const About = () => {
           adventures.
         </SubHeading>
         <Collage />
-        <SubHeading>
-          Here's a time line about my life achievements.
-        </SubHeading>
+        <SubHeading>Here's a time line about my life achievements.</SubHeading>
         <TimeLine />
       </Container>
     </div>
   );
-}
+};
 
-export default About
+export default About;

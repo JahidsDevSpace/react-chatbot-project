@@ -7,13 +7,16 @@ import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import HomePage from "./pages/HomePage";
 import Footer from "./components/Footer";
+import ContactPage from "./pages/ContactPage";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     // "dark" class here forces dark mode; remove it to see light mode
     <main className="flex min-h-screen items-start justify-start">
-      <Container className="flex min-h-[200vh] flex-col p-4 pt-18 md:pt-20 md:pb-10">
+      <Container className="flex min-h-screen flex-col p-4 pt-18 md:pt-20 md:pb-10">
         <Navbar />
+        <Toaster position="top-center" />
         <div className="flex-1">
           <Routes>
             <Route index element={<HomePage />} />
@@ -21,6 +24,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
         <Footer />
