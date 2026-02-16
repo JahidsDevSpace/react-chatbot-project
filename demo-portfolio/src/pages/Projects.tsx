@@ -1,46 +1,16 @@
-import SubHeading from "../components/SubHeading";
-import Heading from "../components/Heading";
 import { motion } from "motion/react";
+import { type Project, projects as defaultProjects} from "../constants/ProjectsData";
+import Heading from "../components/Heading";
+import ProjectsHeading from "../components/ProjectsHeading";
 
-const Projects = () => {
-  const projects = [
-    {
-      title: "Macbook Mockup",
-      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/macbook-scroll.png",
-      href: "#",
-      description:
-        "A mockup of a Mackbook that showcases the product and its features.",
-    },
-    {
-      title: "Instant Feedback",
-      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/wobble-card.png",
-      href: "#",
-      description:
-        "An interactive feedback system that provides instant responses to user actions.",
-    },
-    {
-      title: "Best Component",
-      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/wavy-background.png",
-      href: "#",
-      description:
-        "A visually stunning wavy background component designed to add depth and fluid motion to your hero sections.",
-    },
-    {
-      title: "Authentic Steps",
-      src: "https://aceternity.com/cdn-cgi/image/width=2048/https://assets.aceternity.com/pro/shaders.webp",
-      href: "#",
-      description:
-        "A high-performance shader-based component that creates complex, authentic visual patterns for modern web experiences.",
-    },
-  ];
-
+const Projects = ({ projects = defaultProjects }: { projects?: Project[] }) => {
   return (
     <div className="py-5 text-white">
       <Heading>Projects</Heading>
-      <SubHeading>
-        I love building web apps that can impact millions of lives.
-      </SubHeading>
-      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-2">
+      <ProjectsHeading delay={0.2}>
+        A lifetime in building projects.
+      </ProjectsHeading>
+      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
@@ -58,7 +28,7 @@ const Projects = () => {
               alt={project.title}
               height={300}
               width={300}
-              className="h-72 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px]"
+              className="h-56 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px]"
             />
             <motion.div
               initial={{ y: 10 }}

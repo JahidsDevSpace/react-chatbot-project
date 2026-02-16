@@ -2,6 +2,7 @@ import Heading from "../components/Heading";
 import SubHeading from "../components/SubHeading";
 import Projects from "./Projects";
 import Blog from "./Blog";
+import { projects } from "../constants/ProjectsData";
 
 const HomePage = () => {
   return (
@@ -12,7 +13,7 @@ const HomePage = () => {
         efficient systems. I'm currently working as a software engineer at
         Google.
       </SubHeading>
-      <Projects />
+      <Projects projects={projects.slice(0, 3)} />
       <Blog />
     </>
   );

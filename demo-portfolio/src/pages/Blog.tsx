@@ -56,9 +56,7 @@ const Blog = () => {
   return (
     <div className="mx-auto max-w-4xl px-4">
       <header className="mb-12">
-        <Heading>
-          Blogs
-        </Heading>
+        <Heading>Blogs</Heading>
         <SubHeading>
           Writing about web dev, design, and life.
         </SubHeading>
