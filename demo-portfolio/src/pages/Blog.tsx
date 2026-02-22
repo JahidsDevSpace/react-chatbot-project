@@ -26,7 +26,7 @@ interface Post {
 // This grabs all mdx files in the content folder
 const modules = import.meta.glob<MDXModule>("../content/*.mdx");
 
-const Blog = () => {
+const Blog = ({ limit }: { limit?: number }) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -54,16 +54,14 @@ const Blog = () => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-4xl px-4">
+    <div className="mx-auto max-w-4xl">
       <header className="mb-12">
         <Heading>Blogs</Heading>
-        <SubHeading>
-          Writing about web dev, design, and life.
-        </SubHeading>
+        <SubHeading>Writing about web dev, design, and life.</SubHeading>
       </header>
 
-      <div className="space-y-10">
-        {posts.map(({ slug, meta }) => (
+      <div className="space-y-5">
+        {posts.slice(0, limit).map(({ slug, meta }) => (
           <Link
             to={`/blog/${slug}`}
             key={slug}

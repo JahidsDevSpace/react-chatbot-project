@@ -1,0 +1,70 @@
+export const meta = {
+  title: "Your First REST API with Node.js and Express",
+  date: "25 Apr 2026",
+  description:
+    "A beginner-friendly guide to creating a simple REST API for your web applications.",
+  image: "/public/javascript-cover.png",
+};
+
+# {meta.title}
+
+Written on {meta.date}
+
+# Building the Backend
+
+Every great frontend needs a powerful backend to fetch and manage data. A REST API is the standard way for a client (like your React app) to communicate with a server. Let's build a simple one using Node.js and the popular Express framework.
+
+## Step 1: Project Setup
+
+First, create a new directory for your project and initialize it with npm. This will create a `package.json` file.
+
+```bash
+mkdir my-api
+cd my-api
+npm init -y
+```
+
+Next, install Express:
+
+```bash
+npm install express
+```
+
+## Step 2: Create a Basic Server
+
+Create a file named `index.js` and add the following code to create a simple Express server that listens for requests.
+
+```javascript
+const express = require("express");
+const app = express();
+const port = 3001;
+
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+```
+
+Run your server with `node index.js`. If you visit `http://localhost:3001` in your browser, you'll see "Hello, World!".
+
+## Step 3: Define API Routes
+
+Let's create a route to get a list of users. For now, we'll just use a simple array of data.
+
+```javascript
+// Add this before your app.listen call
+
+const users = [
+  { id: 1, name: "Jahid Hasan" },
+  { id: 2, name: "Jane Doe" },
+];
+
+app.get("/api/users", (req, res) => {
+  res.json(users);
+});
+```
+
+Restart your server and navigate to `http://localhost:3001/api/users`. You'll see the user data returned as JSON. You've just created your first API endpoint! This is the foundation for building complex backends that can power any application.

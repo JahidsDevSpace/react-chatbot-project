@@ -3,6 +3,7 @@ import SubHeading from "../components/SubHeading";
 import Projects from "./Projects";
 import Blog from "./Blog";
 import { projects } from "../constants/ProjectsData";
+import Testimonial from "./Testimonial";
 
 const HomePage = () => {
   return (
@@ -14,7 +15,8 @@ const HomePage = () => {
         Google.
       </SubHeading>
       <Projects projects={projects.slice(0, 3)} />
-      <Blog />
+      <Blog limit={3} />
+      <Testimonial />
     </>
   );
 };
