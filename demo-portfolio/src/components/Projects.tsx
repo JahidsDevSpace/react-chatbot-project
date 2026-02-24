@@ -1,16 +1,14 @@
 import { motion } from "motion/react";
-import { type Project, projects as defaultProjects} from "../constants/ProjectsData";
-import Heading from "../components/Heading";
 import ProjectsHeading from "../components/ProjectsHeading";
+import { type Project } from "../constants/ProjectsData";
 
-const Projects = ({ projects = defaultProjects }: { projects?: Project[] }) => {
+const Projects = ({ projects = [] }: { projects?: Project[] }) => {
   return (
-    <div className="py-5 text-white">
-      <Heading>Projects</Heading>
+    <div className="shadow-section-inset my-4 border-y border-neutral-100 dark:border-neutral-800">
       <ProjectsHeading delay={0.2}>
         A lifetime in building projects.
       </ProjectsHeading>
-      <div className="grid grid-cols-1 gap-4 py-4 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}

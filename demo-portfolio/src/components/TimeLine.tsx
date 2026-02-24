@@ -78,7 +78,7 @@ const TimeLine = () => {
     },
   ];
   return (
-    <div ref={ref} className="py-8">
+    <div ref={ref} className="py-4 my-6 px-4 shadow-section-inset border-y border-neutral-100 dark:border-neutral-800">
       {data.map((item, index) => (
         <div key={index} className="mb-4">
           <motion.h2

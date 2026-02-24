@@ -1,7 +1,7 @@
 import Container from "./Container";
 import { Link } from "react-router-dom";
-import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
+import { motion, useMotionValueEvent, useScroll } from "motion/react";
 
 const Navbar = () => {
   const navItems = [
@@ -28,6 +28,8 @@ const Navbar = () => {
 
   const [scrolled, setScrolled] = useState<boolean>(false);
 
+  // const y = useTransform(scrollY, [0, 100], [0, 10]);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 20) {
       setScrolled(true);
@@ -41,7 +43,15 @@ const Navbar = () => {
       <motion.nav
         animate={{
           boxShadow: scrolled ? "var(--shadow-aceternity)" : "none",
-          width: scrolled ? (window.innerWidth < 768 ? "95%" : "60%") : "100%",
+          width: scrolled ? (window.innerWidth < 768 ? "75%" : "60%") : '65%',
+          // width:
+          //   window.innerWidth < 768
+          //     ? scrolled
+          //       ? "75%"
+          //       : "85%"
+          //     : scrolled
+          //       ? "60%"
+          //       : "65%",
           y: scrolled ? 10 : 0,
         }}
         transition={{

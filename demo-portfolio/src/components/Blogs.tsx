@@ -1,7 +1,6 @@
-import Heading from "../components/Heading";
-import SubHeading from "../components/SubHeading";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import SubHeading from "./SubHeading";
 
 // 1. Define the shape of your MDX Metadata
 interface PostMeta {
@@ -26,7 +25,7 @@ interface Post {
 // This grabs all mdx files in the content folder
 const modules = import.meta.glob<MDXModule>("../content/*.mdx");
 
-const Blog = ({ limit }: { limit?: number }) => {
+const Blogs = ({ limit }: { limit?: number }) => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -54,13 +53,9 @@ const Blog = ({ limit }: { limit?: number }) => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-4xl">
-      <header className="mb-12">
-        <Heading>Blogs</Heading>
-        <SubHeading>Writing about web dev, design, and life.</SubHeading>
-      </header>
-
-      <div className="space-y-5">
+    <div className="flex flex-col gap-5">
+      <SubHeading>Writing about web dev, design, and life.</SubHeading>
+      <div className="space-y-5 px-4">
         {posts.slice(0, limit).map(({ slug, meta }) => (
           <Link
             to={`/blog/${slug}`}
@@ -87,4 +82,4 @@ const Blog = ({ limit }: { limit?: number }) => {
   );
 };
 
-export default Blog;
+export default Blogs;

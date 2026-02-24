@@ -60,11 +60,11 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="py-10">
+    <div className="py-4 my-4 shadow-section-inset border-y border-neutral-100 dark:border-neutral-800">
       <ProjectsHeading delay={0.8} className="pb-5">
         People love my work.
       </ProjectsHeading>
-      <div className="flex mask-r-from-80% mask-l-from-90%">
+      <div className="flex px-4 mask-r-from-80% mask-l-from-90%">
         <Marquee speed={30} pauseOnHover={true} className="py-4">
           {data.map((item, index) => (
             <TestimonialsCard key={index} {...item} />

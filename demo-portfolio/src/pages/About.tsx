@@ -7,7 +7,7 @@ import SubHeading from "../components/SubHeading";
 const About = () => {
   return (
     <div className="flex min-h-screen items-center justify-start">
-      <Container className="min-h-screen p-4 pt-4 md:pt-4 md:pb-10">
+      <Container className="min-h-screen md:pb-10">
         <Heading>About Me</Heading>
         <SubHeading>
           I am a software engineer based in Dhaka, Bangladesh, with a deep

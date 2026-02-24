@@ -11,7 +11,7 @@ const ProjectsHeading = ({
   className?: string;
 }) => {
   return (
-    <h2 className={cn(className,"max-w-lg pt-4 text-sm font-normal text-neutral-500 md:text-sm")}>
+    <h2 className={cn(className,"max-w-lg px-4 pt-4 text-sm font-normal text-neutral-500 md:text-sm")}>
       {children.split(" ").map((char, index) => (
         <motion.span
           initial={{ opacity: 0, y: 5, filter: "blur(2px)" }}
