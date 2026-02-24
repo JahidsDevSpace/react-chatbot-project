@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SubHeading from "./SubHeading";
+import SectionHeading from "./SectionHeading";
 
 // 1. Define the shape of your MDX Metadata
 interface PostMeta {
@@ -54,7 +54,9 @@ const Blogs = ({ limit }: { limit?: number }) => {
 
   return (
     <div className="flex flex-col gap-5">
-      <SubHeading>Writing about web dev, design, and life.</SubHeading>
+      <SectionHeading delay={0.2}>
+        Writing about web dev, design, and life.
+      </SectionHeading>
       <div className="space-y-5 px-4">
         {posts.slice(0, limit).map(({ slug, meta }) => (
           <Link

@@ -1,13 +1,13 @@
 import { motion } from "motion/react";
-import ProjectsHeading from "../components/ProjectsHeading";
+import SectionHeading from "./SectionHeading";
 import { type Project } from "../constants/ProjectsData";
 
 const Projects = ({ projects = [] }: { projects?: Project[] }) => {
   return (
     <div className="shadow-section-inset my-4 border-y border-neutral-100 dark:border-neutral-800">
-      <ProjectsHeading delay={0.2}>
+      <SectionHeading delay={0.2}>
         A lifetime in building projects.
-      </ProjectsHeading>
+      </SectionHeading>
       <div className="grid grid-cols-1 gap-4 px-4 py-4 md:grid-cols-3">
         {projects.map((project, index) => (
           <motion.div

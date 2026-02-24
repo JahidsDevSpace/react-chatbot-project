@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-import ProjectsHeading from "../components/ProjectsHeading";
+import SectionHeading from "../components/SectionHeading";
 
 const Testimonial = () => {
   const data = [
@@ -60,11 +60,11 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="py-4 my-4 shadow-section-inset border-y border-neutral-100 dark:border-neutral-800">
-      <ProjectsHeading delay={0.8} className="pb-5">
+    <div className="shadow-section-inset my-4 border-y border-neutral-100 py-4 dark:border-neutral-800">
+      <SectionHeading delay={0.5} className="mb-4">
         People love my work.
-      </ProjectsHeading>
-      <div className="flex px-4 mask-r-from-80% mask-l-from-90%">
+      </SectionHeading>
+      <div className="flex mask-r-from-80% mask-l-from-90% px-4">
         <Marquee speed={30} pauseOnHover={true} className="py-4">
           {data.map((item, index) => (
             <TestimonialsCard key={index} {...item} />
