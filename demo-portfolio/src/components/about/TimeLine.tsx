@@ -1,7 +1,7 @@
 import { useInView, motion } from "motion/react";
 import { useRef } from "react";
 import CheckIcon from "/circle-check.svg";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 type Data = {
   year: number;
@@ -78,7 +78,10 @@ const TimeLine = () => {
     },
   ];
   return (
-    <div ref={ref} className="py-4 my-6 px-4 shadow-section-inset border-y border-neutral-100 dark:border-neutral-800">
+    <div
+      ref={ref}
+      className="shadow-section-inset my-6 border-y border-neutral-100 px-4 py-4 dark:border-neutral-800"
+    >
       {data.map((item, index) => (
         <div key={index} className="mb-4">
           <motion.h2
@@ -92,7 +95,7 @@ const TimeLine = () => {
               ease: "easeInOut",
               delay: 0.1 * index,
             }}
-            className="shadow-aceternity rounded-md w-fit px-2 py-0.5 mb-2 text-sm font-bold text-black"
+            className="shadow-aceternity mb-2 w-fit rounded-md px-2 py-0.5 text-sm font-bold text-black"
           >
             {item.year}
           </motion.h2>

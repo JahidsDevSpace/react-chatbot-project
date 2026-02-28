@@ -1,5 +1,5 @@
-import TimeLine from "../components/TimeLine";
-import { Collage } from "../components/Collage";
+import TimeLine from "../components/about/TimeLine";
+import { Collage } from "../components/about/Collage";
 import Container from "../components/Container";
 import Heading from "../components/Heading";
 import SubHeading from "../components/SubHeading";

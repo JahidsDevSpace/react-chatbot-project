@@ -61,7 +61,7 @@ const Testimonial = () => {
 
   return (
     <div className="shadow-section-inset my-4 border-y border-neutral-100 py-4 dark:border-neutral-800">
-      <SectionHeading delay={0.5} className="mb-4">
+      <SectionHeading delay={0.4} className="mb-4">
         People love my work.
       </SectionHeading>
       <div className="flex mask-r-from-80% mask-l-from-90% px-4">

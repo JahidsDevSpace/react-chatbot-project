@@ -3,7 +3,7 @@ import SubHeading from "../components/SubHeading";
 import Projects from "../components/Projects";
 import { projects } from "../constants/ProjectsData";
 import Testimonial from "./Testimonial";
-import Blogs from "../components/Blogs";
+import Blogs from "../components/blog/Blogs";
 
 const HomePage = () => {
   return (

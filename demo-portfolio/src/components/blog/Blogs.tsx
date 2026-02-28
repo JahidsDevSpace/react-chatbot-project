@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SectionHeading from "./SectionHeading";
+import SectionHeading from "../SectionHeading";
 
 // 1. Define the shape of your MDX Metadata
 interface PostMeta {
@@ -23,7 +23,7 @@ interface Post {
 }
 
 // This grabs all mdx files in the content folder
-const modules = import.meta.glob<MDXModule>("../content/*.mdx");
+const modules = import.meta.glob<MDXModule>("../../content/*.mdx");
 
 const Blogs = ({ limit }: { limit?: number }) => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -34,7 +34,7 @@ const Blogs = ({ limit }: { limit?: number }) => {
         Object.keys(modules).map(async (path) => {
           const content = await modules[path]();
           return {
-            slug: path.replace("../content/", "").replace(".mdx", ""),
+            slug: path.replace("../../content/", "").replace(".mdx", ""),
             Component: content.default,
             // You can add metadata here if you use frontmatter
             meta: content.meta,

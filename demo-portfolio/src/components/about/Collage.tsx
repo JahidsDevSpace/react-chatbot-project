@@ -1,7 +1,7 @@
 import {
   DraggableCardBody,
   DraggableCardContainer,
-} from "../components/ui/draggable-card";
+} from "../../components/ui/draggable-card";
 
 export function Collage() {
   const items = [

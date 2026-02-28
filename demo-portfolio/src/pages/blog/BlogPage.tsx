@@ -1,5 +1,5 @@
-import Blogs from "../components/Blogs";
-import Heading from "../components/Heading";
+import Blogs from "../../components/blog/Blogs";
+import Heading from "../../components/Heading";
 
 const BlogPage = ({ limit }: { limit?: number }) => {
   return (
