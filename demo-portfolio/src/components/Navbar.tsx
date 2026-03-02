@@ -2,6 +2,8 @@ import Container from "./Container";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
+import IconMenu from "/menu-2.svg";
+import IconX from "/x.svg";
 
 const Navbar = () => {
   const navItems = [
@@ -38,17 +40,20 @@ const Navbar = () => {
     }
   });
 
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <Container className="text-black dark:text-white">
       <motion.nav
         animate={{
           boxShadow: scrolled ? "var(--shadow-aceternity)" : "none",
-          width: scrolled ? (window.innerWidth < 768 ? "75%" : "60%") : '65%',
+          width: scrolled ? "60%" : "65%",
+          // width: scrolled ? (window.innerWidth < 768 ? "75%" : "60%") : "65%",
           // width:
           //   window.innerWidth < 768
           //     ? scrolled
-          //       ? "75%"
-          //       : "85%"
+          //       ? "80%"
+          //       : "90%"
           //     : scrolled
           //       ? "60%"
           //       : "65%",
@@ -58,7 +63,7 @@ const Navbar = () => {
           duration: 0.3,
           ease: "linear",
         }}
-        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between rounded-full bg-white px-3 py-2 dark:bg-neutral-900 dark:text-white"
+        className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-4xl items-center justify-between bg-white px-3 py-2 md:rounded-full dark:bg-neutral-900 dark:text-white"
       >
         <Link to="/">
           <img
@@ -69,7 +74,7 @@ const Navbar = () => {
             className="h-10 w-10 rounded-full"
           />
         </Link>
-        <div className="flex items-center">
+        <div className="hidden items-center md:flex">
           {navItems.map((item, index) => (
             <Link
               className="relative px-2 py-1 text-sm"
@@ -85,6 +90,37 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
+
+        <div className="flex items-center justify-center md:hidden">
+          <button className="cursor-pointer" onClick={() => setOpen(!open)}>
+            {open ? (
+              <img src={IconX} alt="cancel" />
+            ) : (
+              <img src={IconMenu} alt="menu" />
+            )}
+          </button>
+        </div>
+
+        {open && (
+          <div className="absolute inset-x-0 top-15 mx-auto max-w-[90%] rounded-md bg-green-100">
+            <div className="flex flex-col items-start gap-4 p-4 md:hidden">
+              {navItems.map((item, index) => (
+                <Link
+                  className="relative w-full px-2 py-1 text-sm"
+                  to={item.href}
+                  key={index}
+                  onMouseEnter={() => setHovered(index)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  {hovered === index && (
+                    <motion.span className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800" />
+                  )}
+                  <span className="relative z-10">{item.title}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </motion.nav>
     </Container>
   );
