@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IconBrandSpotify, IconChevronLeft, IconChevronRight, IconComponents, IconHome, IconPhotoAi, IconSettings, IconUserCheck } from "@tabler/icons-react";
+import { IconBrandSpotify, IconChevronLeft, IconChevronRight, IconComponents, IconHome, IconPhotoAi, IconUserCheck } from "@tabler/icons-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
