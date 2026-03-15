@@ -26,7 +26,7 @@ const Projects = ({ projects = [] }: { projects?: Project[] }) => {
               alt={project.title}
               height={300}
               width={300}
-              className="h-56 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px]"
+              className="h-56 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px] aspect-video"
             />
             <motion.div
               initial={{ y: 10 }}

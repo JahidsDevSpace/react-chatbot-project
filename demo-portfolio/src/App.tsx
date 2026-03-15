@@ -28,7 +28,7 @@ function App() {
           </div>
         </div>
         <Toaster position="top-center" />
-        <div className="flex-1">
+        <div className="min-h-[80vh] flex-1">
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/projects" element={<Projects />} />
