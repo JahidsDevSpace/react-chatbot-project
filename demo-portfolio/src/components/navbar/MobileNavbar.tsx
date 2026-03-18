@@ -60,30 +60,27 @@ const MobileNavbar = () => {
           />
         )}
       </AnimatePresence>
-      
+
       <motion.nav
         initial={false}
         animate={{
-          height: isMobile && open ? "auto" : "56px",
-          y: isMobile && open ? 20 : 10,
+          y: isMobile && open ? 18 : 8,
           boxShadow: scrolled || open ? "var(--shadow-aceternity)" : "none",
         }}
-        transition={{ duration: 0.3, ease: "linear" }}
+        transition={{ type: "spring", stiffness: 500, damping: 30, mass: 0.25 }}
         className="fixed top-0 left-1/2 z-50 flex w-[calc(100vw-6rem)] max-w-[calc(100vw-6rem)] -translate-x-1/2 flex-col items-center justify-between rounded-3xl bg-[#f2f2f2] px-2 py-2 md:hidden dark:bg-neutral-900"
       >
         <div className="flex w-full shrink-0 items-center justify-between">
           <Link to="/" className="shrink-0">
-            <img
+            <motion.img
               src="/me.jpg"
-              height={100}
-              width={100}
               alt="Avatar"
               className="h-10 w-10 rounded-full"
+              whileTap={{ scale: 0.92 }}
               onClick={() => setOpen(false)}
             />
           </Link>
 
-          {/* Mobile Toggle */}
           <div className="flex items-center justify-center min-[720px]:hidden">
             <button
               className="cursor-pointer p-2"
@@ -98,16 +95,21 @@ const MobileNavbar = () => {
           </div>
         </div>
 
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           {open && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "linear" }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.1, ease: "easeInOut" }}
               className="flex w-full flex-col px-3 pb-3 md:hidden"
             >
-              <div className="my-2 h-px w-full bg-neutral-200 dark:bg-neutral-800" />
+              <motion.div
+                initial={{ scaleX: 0, vertOriginX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="my-2 h-px w-full bg-neutral-300 dark:bg-neutral-800"
+              />
               <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => (
                   <Link
@@ -119,7 +121,7 @@ const MobileNavbar = () => {
                     onMouseLeave={() => setHovered(null)}
                   >
                     {hovered === index && (
-                      <motion.span className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800"></motion.span>
+                      <span className="absolute inset-0 h-full w-full rounded-md bg-neutral-200 dark:bg-neutral-800" />
                     )}
                     <span className="relative z-10">{item.title}</span>
                   </Link>

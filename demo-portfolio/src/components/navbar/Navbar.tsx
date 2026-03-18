@@ -44,7 +44,7 @@ const Navbar = () => {
         animate={{
           // Logic: If mobile: 100%. If medium: scrolled ? 60% : 65%
           // width: scrolled ? "60%" : "65%",
-          y: scrolled ? 20 : 10,
+          y: scrolled ? 15 : 8,
           boxShadow: scrolled ? "var(--shadow-aceternity)" : "none",
         }}
         transition={{
@@ -57,8 +57,6 @@ const Navbar = () => {
           <Link to="/" className="shrink-0">
             <img
               src="/me.jpg"
-              height={100}
-              width={100}
               alt="Avatar"
               className="h-10 w-10 rounded-full"
             />

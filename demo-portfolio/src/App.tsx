@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Container from "./components/Container";
 import Navbar from "./components/navbar/Navbar";
-import MobileNavbar from "./components/navbar/MobileNavbar"; // custom mobile menu
+import MobileNavbar from "./components/navbar/MobileNavbar";
 import Projects from "./pages/ProjectsPage";
 import BlogPage from "./pages/blog/BlogPage";
 import BlogPost from "./pages/blog/BlogPost";
@@ -18,6 +18,7 @@ function App() {
     <main className="flex min-h-screen items-start justify-start">
       <Container className="min-h-screen px-8 pt-18 md:pt-20 md:pb-10">
         <Scale />
+
         {/* render mobile or desktop navbar based on viewport width */}
         <div className="relative w-full">
           <div className="hidden min-[720px]:block">
@@ -27,7 +28,9 @@ function App() {
             <MobileNavbar />
           </div>
         </div>
+
         <Toaster position="top-center" />
+
         <div className="min-h-[80vh] flex-1">
           <Routes>
             <Route index element={<HomePage />} />
@@ -38,6 +41,7 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </div>
+        
         <Footer />
       </Container>
     </main>
