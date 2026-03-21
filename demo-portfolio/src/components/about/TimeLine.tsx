@@ -80,7 +80,7 @@ const TimeLine = () => {
   return (
     <div
       ref={ref}
-      className="shadow-section-inset my-6 border-y border-neutral-100 px-4 py-4 dark:border-neutral-800"
+      className="shadow-section-inset my-6 border-y border-neutral-100 px-4 py-4 dark:border-neutral-800 dark:shadow-none"
     >
       {data.map((item, index) => (
         <div key={index} className="mb-4">
@@ -95,7 +95,7 @@ const TimeLine = () => {
               ease: "easeInOut",
               delay: 0.1 * index,
             }}
-            className="shadow-aceternity mb-2 w-fit rounded-md px-2 py-0.5 text-sm font-bold text-black"
+            className="shadow-aceternity dark:shadow-aceternity-dark mb-2 w-fit rounded-md px-2 py-0.5 text-sm font-bold text-black dark:text-white"
           >
             {item.year}
           </motion.h2>
@@ -115,7 +115,7 @@ const TimeLine = () => {
                       ease: "easeInOut",
                       delay: 0.2 * indx,
                     }}
-                    className="text-neutral-600"
+                    className="text-neutral-600 dark:text-neutral-400"
                   >
                     {content.title}
                   </motion.h3>
@@ -132,7 +132,7 @@ const TimeLine = () => {
                       ease: "easeInOut",
                       delay: 0.3 * indx,
                     }}
-                    className="pt-1 pl-6 text-sm text-neutral-400"
+                    className="pt-1 pl-6 text-sm text-neutral-400 dark:text-neutral-600"
                   >
                     {content.description}
                   </motion.p>
@@ -171,7 +171,7 @@ const Step = ({
       <img
         src={CheckIcon}
         alt="Check"
-        className="mt-1 h-4 w-4 text-neutral-500"
+        className="mt-1 h-4 w-4 dark:invert-80"
       />
       {children}
     </motion.div>

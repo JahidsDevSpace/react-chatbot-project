@@ -62,9 +62,9 @@ const Blogs = ({ limit }: { limit?: number }) => {
           <Link
             to={`/blog/${slug}`}
             key={slug}
-            className="group block rounded-2xl border border-zinc-800 p-5 transition-all hover:bg-zinc-300/50"
+            className="group block rounded-2xl border border-zinc-800 p-5 transition-all hover:bg-zinc-300/50 dark:border-zinc-500 dark:hover:bg-zinc-700/50"
           >
-            <h2 className="text-xl font-semibold text-neutral-800 transition-colors group-hover:text-blue-400 dark:text-neutral-200">
+            <h2 className="text-xl font-semibold text-neutral-800 transition-colors group-hover:text-blue-400 dark:text-neutral-300 dark:group-hover:text-blue-400">
               {meta.title}
             </h2>
             <p className="mt-2 line-clamp-2 text-sm text-zinc-400">

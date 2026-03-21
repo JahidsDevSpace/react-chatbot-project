@@ -4,7 +4,7 @@ import { type Project } from "../constants/ProjectsData";
 
 const Projects = ({ projects = [] }: { projects?: Project[] }) => {
   return (
-    <div className="shadow-section-inset my-4 border-y border-neutral-100 dark:border-neutral-800">
+    <div className="shadow-section-inset dark:shadow-none my-4 border-y border-neutral-200 dark:border-neutral-900">
       <SectionHeading delay={0.2}>
         A lifetime in building projects.
       </SectionHeading>
@@ -26,7 +26,7 @@ const Projects = ({ projects = [] }: { projects?: Project[] }) => {
               alt={project.title}
               height={300}
               width={300}
-              className="h-56 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px] aspect-video"
+              className="aspect-video h-56 w-full rounded-xl object-cover transition duration-200 group-hover:scale-[1.02] group-hover:blur-[1px]"
             />
             <motion.div
               initial={{ y: 10 }}
@@ -34,13 +34,11 @@ const Projects = ({ projects = [] }: { projects?: Project[] }) => {
               transition={{ duration: 0.2, ease: "easeInOut" }}
               className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
             >
-              <div className="transform transition-transform duration-200">
-                <h2 className="text-xl font-medium tracking-tight text-white dark:text-black">
+              <div className="transform text-zinc-300 transition-transform duration-200">
+                <h2 className="text-xl font-medium tracking-tight">
                   {project.title}
                 </h2>
-                <p className="max-w-xs text-sm text-zinc-300 dark:text-black">
-                  {project.description}
-                </p>
+                <p className="max-w-xs text-sm">{project.description}</p>
               </div>
             </motion.div>
           </motion.div>

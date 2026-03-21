@@ -14,7 +14,7 @@ const SectionHeading = ({
     <h2
       className={cn(
         className,
-        "relative mt-4 w-fit max-w-lg px-4 text-sm font-normal text-neutral-500 md:text-sm dark:text-neutral-300",
+        "text-secondary relative mt-4 w-fit max-w-lg px-4 text-sm font-normal md:text-sm dark:text-neutral-300",
       )}
     >
       <Background />

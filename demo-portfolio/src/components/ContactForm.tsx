@@ -53,13 +53,13 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="shadow-section-inset mx-auto border-y border-neutral-100 py-10 my-6 px-4 dark:border-neutral-800"
+      className="shadow-section-inset mx-auto my-6 border-y border-neutral-100 px-4 py-10 dark:border-neutral-900 dark:shadow-none"
     >
-      <div className="mx-auto max-w-lg flex flex-col gap-5">
+      <div className="mx-auto flex max-w-lg flex-col gap-5">
         <div className="flex flex-col gap-2">
           <label
             htmlFor="name"
-            className="text-sm font-medium tracking-tight text-neutral-600"
+            className="text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-400"
           >
             Full Name
           </label>
@@ -70,12 +70,12 @@ const ContactForm = () => {
             onChange={handleChange}
             type="text"
             placeholder="Enter your name"
-            className="shadow-aceternity focus:ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+            className="shadow-aceternity dark:shadow-aceternity-dark focus:ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none dark:focus:ring-neutral-400"
           />
 
           <label
             htmlFor="email"
-            className="text-sm font-medium tracking-tight text-neutral-600"
+            className="text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-400"
           >
             Email
           </label>
@@ -86,12 +86,12 @@ const ContactForm = () => {
             onChange={handleChange}
             type="email"
             placeholder="Enter your email"
-            className="shadow-aceternity focus:ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+            className="shadow-aceternity dark:shadow-aceternity-dark focus:ring-primary rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none dark:focus:ring-neutral-400"
           />
 
           <label
             htmlFor="message"
-            className="text-sm font-medium tracking-tight text-neutral-600"
+            className="text-sm font-medium tracking-tight text-neutral-600 dark:text-neutral-400"
           >
             Message
           </label>
@@ -101,13 +101,13 @@ const ContactForm = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="shadow-aceternity focus:ring-primary resize-none rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none"
+            className="shadow-aceternity dark:shadow-aceternity-dark focus:ring-primary resize-none rounded-md px-2 py-1 text-sm focus:ring-2 focus:outline-none dark:focus:ring-neutral-400"
             placeholder="Enter your message"
           />
         </div>
         <button
           type="submit"
-          className="bg-primary cursor-pointer rounded-md px-4 py-2 text-white"
+          className="bg-primary dark:bg-neutral-300 cursor-pointer rounded-md px-4 py-2 text-white dark:text-black"
         >
           Submit
         </button>

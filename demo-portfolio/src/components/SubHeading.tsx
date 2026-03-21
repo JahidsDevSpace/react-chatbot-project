@@ -15,11 +15,11 @@ const SubHeading = ({
       initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
       whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut", delay: 0.2 }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
     >
       <Tag
         className={cn(
-          "text-secondary px-4 max-w-lg pt-4 text-sm md:text-sm",
+          "text-secondary max-w-lg px-4 pt-4 text-sm md:text-sm",
           className,
         )}
       >

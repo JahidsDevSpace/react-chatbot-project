@@ -15,11 +15,11 @@ const Heading = ({
       initial={{ opacity: 0, filter: "blur(10px)", y: 10 }}
       whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      viewport={{once: true}}
+      viewport={{ once: true }}
     >
       <Tag
         className={cn(
-          "text-primary px-4 text-2xl font-bold tracking-tighter drop-shadow-lg md:text-4xl",
+          "text-primary px-4 text-2xl font-bold tracking-tighter drop-shadow-lg md:text-4xl dark:text-neutral-300",
           className,
         )}
       >

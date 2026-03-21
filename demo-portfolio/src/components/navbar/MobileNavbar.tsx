@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
 import Container from "../Container";
 import IconMenu from "/menu-2.svg";
 import IconX from "/x.svg";
@@ -48,7 +53,7 @@ const MobileNavbar = () => {
   });
 
   return (
-    <Container className="text-black dark:text-white">
+    <Container>
       <AnimatePresence>
         {open && (
           <motion.div
@@ -90,6 +95,8 @@ const MobileNavbar = () => {
                 animate={{ rotate: open ? 90 : 0 }}
                 src={open ? IconX : IconMenu}
                 alt="Toggle Menu"
+                className="dark:invert-50"
+                whileTap={{ scale: 0.92 }}
               />
             </button>
           </div>

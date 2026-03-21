@@ -38,7 +38,7 @@ const Navbar = () => {
   });
 
   return (
-    <Container className="text-black dark:text-white">
+    <Container>
       <motion.nav
         initial={false}
         animate={{
@@ -51,7 +51,7 @@ const Navbar = () => {
           duration: 0.3,
           ease: "linear",
         }}
-        className="fixed top-0 left-1/2 z-50 flex w-full max-w-155 -translate-x-1/2 flex-col items-center justify-between rounded-3xl bg-[#f2f2f2] px-2 py-2 dark:bg-neutral-900 dark:text-white"
+        className="fixed top-0 left-1/2 z-50 flex w-full max-w-155 -translate-x-1/2 flex-col items-center justify-between rounded-3xl bg-[#f2f2f2] px-2 py-2 dark:bg-neutral-900"
       >
         <div className="flex w-full shrink-0 items-center justify-between">
           <Link to="/" className="shrink-0">

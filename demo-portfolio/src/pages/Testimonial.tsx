@@ -45,8 +45,10 @@ const Testimonial = () => {
     avatar?: string;
   }) => {
     return (
-      <div className="shadow-aceternity mx-4 flex h-50 w-full max-w-60 flex-col justify-between rounded-xl p-4 transition duration-300 hover:shadow-md">
-        <p className="text-sm text-neutral-700">{quote}</p>
+      <div className="shadow-aceternity dark:shadow-aceternity-dark mx-4 flex h-50 w-full max-w-60 flex-col justify-between rounded-xl p-4 transition-colors duration-300 hover:shadow-md dark:hover:shadow-neutral-800">
+        <p className="text-sm text-neutral-700 dark:text-neutral-400">
+          {quote}
+        </p>
         <div className="flex items-center gap-4">
           <img
             src={avatar}
@@ -60,7 +62,7 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="shadow-section-inset my-4 border-y border-neutral-100 py-4 dark:border-neutral-800">
+    <div className="shadow-section-inset my-4 border-y border-neutral-100 py-4 dark:border-neutral-800 dark:shadow-none">
       <SectionHeading delay={0.4} className="mb-4">
         People love my work.
       </SectionHeading>
