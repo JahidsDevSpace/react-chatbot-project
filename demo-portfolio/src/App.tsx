@@ -22,19 +22,21 @@ function App() {
   });
 
   useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+
     if (darkMode) {
-      localStorage.setItem('theme', 'dark')
+      document.documentElement.classList.add('dark');
     } else {
-      localStorage.setItem('theme', 'light');
+      document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
 
   return (
     // "dark" class here forces dark mode; remove it to see light mode
     <main
-      className={`${darkMode ? "dark" : ""} flex min-h-screen items-start justify-start transition-colors duration-300`}
+      className={`${darkMode ? "dark" : ""} flex min-h-screen items-start justify-start`}
     >
-      <Container className="text-primary min-h-screen px-8 pt-18 md:pt-20 md:pb-10 dark:text-neutral-300">
+      <Container className="text-primary min-h-screen px-8 pt-18 transition-colors duration-500 md:pt-20 md:pb-10 dark:text-neutral-300">
         <Scale />
 
         {/* render mobile or desktop navbar based on viewport width */}
@@ -60,17 +62,17 @@ function App() {
           </Routes>
         </div>
 
-        <div className="sticky right-16 bottom-16 flex h-10 w-20 items-center justify-center rounded-full bg-neutral-300 shadow-sm dark:invert">
+        <div className="sticky right-16 bottom-16 flex h-10 w-20 items-center justify-center rounded-full bg-neutral-300 shadow-xl transition-all duration-500 dark:invert">
           <div className="flex h-full w-full items-center justify-between px-2">
             <button
               onClick={() => setDarkMode(true)}
-              className={`${darkMode ? "opacity-100" : "opacity-40 hover:opacity-100"} cursor-pointer border-r dark:border-r-neutral-700 pr-2 transition-opacity`}
+              className={`${darkMode ? "opacity-100" : "opacity-40 hover:opacity-100"} cursor-pointer border-r pr-2 transition-all dark:border-neutral-700`}
             >
               <img src={DarkMode} alt="DarkMode" />
             </button>
             <button
               onClick={() => setDarkMode(false)}
-              className={`cursor-pointer pl-1 transition-opacity ${!darkMode ? "opacity-100" : "opacity-40 hover:opacity-100"} `}
+              className={`cursor-pointer pl-1 ${!darkMode ? "opacity-100" : "opacity-40 hover:opacity-100"} transition-all`}
             >
               <img src={LightMode} alt="LightMode" />
             </button>
