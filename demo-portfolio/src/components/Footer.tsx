@@ -24,7 +24,7 @@ const Footer = () => {
   ]
 
   return (
-    <Container className="flex justify-between border-t border-neutral-100 px-10 py-3">
+    <Container className="flex justify-between border-t border-neutral-100 dark:border-neutral-800 px-10 py-3">
       <p className="text-xs text-neutral-500">Built with Jahid Hasan</p>
 
       <div className="flex items-center justify-center gap-4">
